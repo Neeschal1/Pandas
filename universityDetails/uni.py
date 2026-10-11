@@ -28,11 +28,12 @@ datarecord = []
 # for i in range(0, len(df)-1):
 #     print(df.iloc[i], "\n\n")
 
-for i in range(0, 1):
+for i in range(0, len(df)-10):
     record = {
         "USA": [
             {
                 "university_courses_details": {
+                    "university_images": [ast.literal_eval(df.iloc[i, 21])],
                     "university_name": df.iloc[i, 1],
                     "location": df.iloc[i, 2],
                     "available_courses": ast.literal_eval(df.iloc[i, 3]),
@@ -65,6 +66,7 @@ for i in range(0, 1):
                     "housing_and_accomodation": ast.literal_eval(df.iloc[i, 17]),
                     "insurances": df.iloc[i, 18],
                     "acceptable_international_students": ast.literal_eval(df.iloc[i, 19]),
+                    "redirect_link": df.iloc[i, 22]
                 }
             },
         ]
